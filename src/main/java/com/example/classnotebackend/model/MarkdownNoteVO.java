@@ -4,6 +4,7 @@ public class MarkdownNoteVO {
     private String id;
     private String filename;
     private String content;
+    private String[] imgUrls;
     private long createTime;
     private long updateTime;
     private String userId;
@@ -17,6 +18,7 @@ public class MarkdownNoteVO {
         vo.createTime = po.getCreateTime();
         vo.updateTime = po.getUpdateTime();
         vo.userId = po.getUserId();
+        vo.imgUrls = po.getImgUrls();
         return vo;
     }
 
@@ -73,5 +75,13 @@ public class MarkdownNoteVO {
 
     public String getUsername() {
         return username;
+    }
+
+    public void setImgUrls(String[] imgUrls) {
+        this.imgUrls = imgUrls;
+    }
+
+    public String[] getImgUrls() {
+        return imgUrls;
     }
 }
