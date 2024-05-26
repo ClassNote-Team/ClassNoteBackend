@@ -1,19 +1,16 @@
 package com.example.classnotebackend.controller;
 
 
-import com.example.classnotebackend.Repository.UserRepository;
-import com.example.classnotebackend.model.UserCreateRequest;
-import com.example.classnotebackend.model.UserLoginRequest;
-import com.example.classnotebackend.model.UserVO;
-import com.example.classnotebackend.service.UserService;
+import com.example.classnotebackend.model.User.UserCreateRequest;
+import com.example.classnotebackend.model.User.UserLoginRequest;
+import com.example.classnotebackend.model.User.UserVO;
+import com.example.classnotebackend.service.User.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
-import java.net.URI;
 
 @RestController
 @RequestMapping("/login")

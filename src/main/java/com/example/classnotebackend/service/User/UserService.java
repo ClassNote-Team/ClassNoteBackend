@@ -1,11 +1,11 @@
-package com.example.classnotebackend.service;
+package com.example.classnotebackend.service.User;
 
 
-import com.example.classnotebackend.Repository.UserRepository;
-import com.example.classnotebackend.model.UserCreateRequest;
-import com.example.classnotebackend.model.UserLoginRequest;
-import com.example.classnotebackend.model.UserPO;
-import com.example.classnotebackend.model.UserVO;
+import com.example.classnotebackend.Repository.User.UserRepository;
+import com.example.classnotebackend.model.User.UserCreateRequest;
+import com.example.classnotebackend.model.User.UserLoginRequest;
+import com.example.classnotebackend.model.User.UserPO;
+import com.example.classnotebackend.model.User.UserVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

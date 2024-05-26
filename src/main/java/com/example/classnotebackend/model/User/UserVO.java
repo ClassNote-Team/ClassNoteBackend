@@ -1,4 +1,4 @@
-package com.example.classnotebackend.model;
+package com.example.classnotebackend.model.User;
 
 public class UserVO {
     private String id;

@@ -1,4 +1,4 @@
-package com.example.classnotebackend.model;
+package com.example.classnotebackend.model.User;
 
 public class UserLoginRequest {
     private String email;

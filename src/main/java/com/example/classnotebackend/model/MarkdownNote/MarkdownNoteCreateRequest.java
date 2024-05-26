@@ -1,9 +1,8 @@
-package com.example.classnotebackend.model;
+package com.example.classnotebackend.model.MarkdownNote;
 
 public class MarkdownNoteCreateRequest {
     private String filename;
     private String content;
-    private String[] imgUrls;
     private String userId;
 
     public void setFilename(String filename) {
@@ -30,11 +29,4 @@ public class MarkdownNoteCreateRequest {
         return userId;
     }
 
-    public void setImgUrls(String[] imgUrls) {
-        this.imgUrls = imgUrls;
-    }
-
-    public String[] getImgUrls() {
-        return imgUrls;
-    }
 }

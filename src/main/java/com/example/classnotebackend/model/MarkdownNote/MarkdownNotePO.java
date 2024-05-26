@@ -1,4 +1,4 @@
-package com.example.classnotebackend.model;
+package com.example.classnotebackend.model.MarkdownNote;
 
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -8,7 +8,6 @@ public class MarkdownNotePO {
     private String id;
     private String filename;
     private String content;
-    private String[] imgUrls;
     private long createTime;
     private long updateTime;
     private String userId;
@@ -20,7 +19,6 @@ public class MarkdownNotePO {
         po.userId = request.getUserId();
         po.createTime = System.currentTimeMillis();
         po.updateTime = po.createTime;
-        po.imgUrls = request.getImgUrls();
         return po;
     }
 
@@ -71,13 +69,4 @@ public class MarkdownNotePO {
     public void setUserId(String userId) {
         this.userId = userId;
     }
-
-    public void setImgUrls(String[] imgUrls) {
-        this.imgUrls = imgUrls;
-    }
-
-    public String[] getImgUrls() {
-        return imgUrls;
-    }
-
 }

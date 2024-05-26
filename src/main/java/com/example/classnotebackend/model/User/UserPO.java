@@ -1,4 +1,4 @@
-package com.example.classnotebackend.model;
+package com.example.classnotebackend.model.User;
 
 import org.springframework.data.mongodb.core.mapping.Document;
 
