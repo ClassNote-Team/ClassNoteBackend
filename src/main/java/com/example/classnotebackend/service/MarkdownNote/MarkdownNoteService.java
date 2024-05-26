@@ -1,19 +1,30 @@
-package com.example.classnotebackend.service;
+package com.example.classnotebackend.service.MarkdownNote;
 
-import com.example.classnotebackend.Repository.MarkdownNoteRepository;
+import com.example.classnotebackend.Repository.MarkdownNote.MarkdownNoteRepository;
 import com.example.classnotebackend.exception.NotFoundException;
-import com.example.classnotebackend.model.MarkdownNoteCreateRequest;
-import com.example.classnotebackend.model.MarkdownNotePO;
-import com.example.classnotebackend.model.MarkdownNoteUpdateRequest;
-import com.example.classnotebackend.model.MarkdownNoteVO;
+import com.example.classnotebackend.model.MarkdownNote.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class MarkdownNoteService {
 
     @Autowired
     private MarkdownNoteRepository markdownNoteRepository;
+
+
+    public List<MarkdownNoteFileVO> getMarkdownNoteFileListVO(String userId) {
+        List<MarkdownNotePO> notes = markdownNoteRepository.findByUserId(userId);
+
+        return notes.stream()
+                .map(MarkdownNoteFileVO::of)
+                .sorted((vo1, vo2) -> Long.compare(vo2.getUpdateTime(), vo1.getUpdateTime()))
+                .collect(Collectors.toList());
+    }
+
 
     public MarkdownNoteVO getMarkdownNoteVO(String id) {
         MarkdownNotePO po = getMarkdownNotePO(id);

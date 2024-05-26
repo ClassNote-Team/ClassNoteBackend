@@ -1,4 +1,4 @@
-package com.example.classnotebackend.model;
+package com.example.classnotebackend.model.MarkdownNote;
 
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -69,5 +69,4 @@ public class MarkdownNotePO {
     public void setUserId(String userId) {
         this.userId = userId;
     }
-
 }

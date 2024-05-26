@@ -1,4 +1,4 @@
-package com.example.classnotebackend.model;
+package com.example.classnotebackend.model.MarkdownNote;
 
 public class MarkdownNoteUpdateRequest {
     private String filename;

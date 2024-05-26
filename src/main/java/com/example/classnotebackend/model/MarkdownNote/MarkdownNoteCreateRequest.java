@@ -1,4 +1,4 @@
-package com.example.classnotebackend.model;
+package com.example.classnotebackend.model.MarkdownNote;
 
 public class MarkdownNoteCreateRequest {
     private String filename;
@@ -28,4 +28,5 @@ public class MarkdownNoteCreateRequest {
     public String getUserId() {
         return userId;
     }
+
 }
