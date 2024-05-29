@@ -2,6 +2,8 @@ package com.example.classnotebackend.model.MarkdownNote;
 
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import java.util.List;
+
 
 @Document(collection = "markdown_note")
 public class MarkdownNotePO {
@@ -11,6 +13,7 @@ public class MarkdownNotePO {
     private long createTime;
     private long updateTime;
     private String userId;
+    private List<String> base64Images;
 
     public static MarkdownNotePO of(MarkdownNoteCreateRequest request) {
         MarkdownNotePO po = new MarkdownNotePO();
@@ -19,6 +22,7 @@ public class MarkdownNotePO {
         po.userId = request.getUserId();
         po.createTime = System.currentTimeMillis();
         po.updateTime = po.createTime;
+        po.base64Images = request.getBase64Images();
         return po;
     }
 
@@ -68,5 +72,13 @@ public class MarkdownNotePO {
 
     public void setUserId(String userId) {
         this.userId = userId;
+    }
+
+    public List<String> getBase64Images() {
+        return base64Images;
+    }
+
+    public void setBase64Images(List<String> base64Images) {
+        this.base64Images = base64Images;
     }
 }

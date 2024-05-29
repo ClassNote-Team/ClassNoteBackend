@@ -1,5 +1,7 @@
 package com.example.classnotebackend.model.MarkdownNote;
 
+import java.util.List;
+
 public class MarkdownNoteVO {
     private String id;
     private String filename;
@@ -7,7 +9,7 @@ public class MarkdownNoteVO {
     private long createTime;
     private long updateTime;
     private String userId;
-    private String username;
+    private List<String> base64Images;
 
     public static MarkdownNoteVO of(MarkdownNotePO po) {
         MarkdownNoteVO vo = new MarkdownNoteVO();
@@ -17,6 +19,7 @@ public class MarkdownNoteVO {
         vo.createTime = po.getCreateTime();
         vo.updateTime = po.getUpdateTime();
         vo.userId = po.getUserId();
+        vo.base64Images = po.getBase64Images();
         return vo;
     }
 
@@ -67,11 +70,11 @@ public class MarkdownNoteVO {
         return userId;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setBase64Images(List<String> base64Images) {
+        this.base64Images = base64Images;
     }
 
-    public String getUsername() {
-        return username;
+    public List<String> getBase64Images() {
+        return base64Images;
     }
 }
