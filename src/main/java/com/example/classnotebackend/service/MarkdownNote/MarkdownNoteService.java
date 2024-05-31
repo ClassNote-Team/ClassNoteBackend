@@ -28,9 +28,7 @@ public class MarkdownNoteService {
 
     public MarkdownNoteVO getMarkdownNoteVO(String id) {
         MarkdownNotePO po = getMarkdownNotePO(id);
-        MarkdownNoteVO vo = MarkdownNoteVO.of(po);
-        vo.setUsername("test");
-        return vo;
+        return MarkdownNoteVO.of(po);
     }
 
     public MarkdownNotePO createMarkdownNotePO(MarkdownNoteCreateRequest request) {
@@ -40,7 +38,7 @@ public class MarkdownNoteService {
 
     public void updateMarkdownNotePO(String id, MarkdownNoteUpdateRequest request) {
         MarkdownNotePO po = getMarkdownNotePO(id);
-        po.setFilename(request.getFilename());
+        po.setBase64Images(request.getBase64Images());
         po.setContent(request.getContent());
         po.setUpdateTime(System.currentTimeMillis());
         markdownNoteRepository.save(po);
