@@ -18,7 +18,7 @@ public class MarkdownNoteController {
     private MarkdownNoteService markdownNoteService;
 
     @GetMapping("/fileList/{userId}")
-    public ResponseEntity<List<MarkdownNoteFileVO>> getHello(@PathVariable("userId") String userId){
+    public ResponseEntity<List<MarkdownNoteFileVO>> getFileList(@PathVariable("userId") String userId){
         List<MarkdownNoteFileVO> vo = markdownNoteService.getMarkdownNoteFileListVO(userId);
         return ResponseEntity.ok(vo);
     }
