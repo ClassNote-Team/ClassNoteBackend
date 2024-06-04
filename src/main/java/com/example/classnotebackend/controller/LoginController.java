@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/login")
 public class LoginController {
     @Autowired
     private UserService userService;
@@ -28,7 +27,7 @@ public class LoginController {
         }
     }
 
-    @PostMapping
+    @PostMapping("/login")
     public ResponseEntity<UserVO> login(@RequestBody UserLoginRequest userLoginRequest) {
         try {
             UserVO userVO = userService.login(userLoginRequest);
